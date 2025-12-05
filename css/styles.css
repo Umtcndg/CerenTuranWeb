@@ -12613,3 +12613,68 @@ header.masthead {
         #portfolio .container-fluid .portfolio-box:hover .portfolio-box-caption, #portfolio .container-sm .portfolio-box:hover .portfolio-box-caption, #portfolio .container-md .portfolio-box:hover .portfolio-box-caption, #portfolio .container-lg .portfolio-box:hover .portfolio-box-caption, #portfolio .container-xl .portfolio-box:hover .portfolio-box-caption, #portfolio .container-xxl .portfolio-box:hover .portfolio-box-caption {
             opacity: 1;
         }
+/*DROPDOWN*/
+#mainNav .nav-item.dropdown .dropdown-toggle::after {
+    display: none !important;
+}
+
+#mainNav .dropdown-menu {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    transition: opacity .15s ease, transform .15s ease;
+}
+
+#mainNav .dropdown-item {
+    font-weight: 600;
+    font-size: 0.90rem;
+    color: #813243 !important;
+    padding: 0.70rem 1.1rem;
+    border-radius: 0 !important;
+    background: none !important;
+    transition: background-color .15s ease, color .15s ease;
+}
+
+    #mainNav .dropdown-menu li:hover .dropdown-item,
+    #mainNav .dropdown-item:hover,
+    #mainNav .dropdown-item:focus {
+        background-color: #813243 !important;
+        color: #fff !important;
+    }
+
+#mainNav .nav-link,
+#mainNav .nav-link:focus,
+#mainNav .nav-link:active {
+    background: none !important;
+    box-shadow: none !important;
+}
+
+@media (min-width: 992px) {
+    #mainNav .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+        margin-top: 0 !important;
+    }
+
+    #mainNav .dropdown-menu {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+}
+
+@media (min-width: 992px) {
+    #mainNav.navbar-shrink .dropdown-item {
+        color: #813243 !important;
+    }
+
+        #mainNav.navbar-shrink .dropdown-menu li:hover .dropdown-item,
+        #mainNav.navbar-shrink .dropdown-item:hover {
+            background-color: #813243 !important;
+            color: #fff !important;
+        }
+}
