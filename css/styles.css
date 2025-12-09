@@ -12433,6 +12433,9 @@ body {
 .page-section {
     padding: 8rem 0;
 }
+.page-section-call-to-action {
+    padding: 2rem 0;
+}
 
 .text-white-75 {
     color: rgba(255, 255, 255, 0.75) !important;
@@ -12457,6 +12460,14 @@ hr.divider {
 
 hr.divider-light {
     background-color: #fff;
+}
+
+hr.divider-long {
+    height: 0.3rem;
+    max-width: 90rem;
+    margin: 1.5rem auto;
+    background-color: #813243;
+    opacity: 1;
 }
 
 #mainNav {
@@ -12539,7 +12550,7 @@ hr.divider-light {
 header.masthead {
     padding-top: 10rem;
     padding-bottom: calc(10rem - 4.5rem);
-    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../assets/img/Cons/bg-masthead.jpg");
+    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../assets/img/Cons/bg-masthead.png");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -12677,4 +12688,68 @@ header.masthead {
             background-color: #813243 !important;
             color: #fff !important;
         }
+}
+
+    /*İmza Fontu*/
+@font-face {
+    font-family: "Cornelia Script";
+    src: url("../assets/fonts/cornelia-script-cornelia.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+.imza {
+    font-family: "Cornelia Script", cursive;
+    font-size: 150px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    color: #813243;
+}
+
+.service-box {
+    display: flex;
+    height: 200px;
+    overflow: hidden;
+}
+
+/* Fotoğraf alanı */
+.service-photo {
+    width: 50%;
+    height: 100%;
+}
+
+    .service-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+/* Yazı alanı */
+.service-text {
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-left: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Başlık linki */
+.service-title-link {
+    text-decoration: none;
+    color: #813243;
+}
+
+/* Başlık */
+.service-title {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+/* Açıklama */
+.service-desc {
+    margin: 0;
+    font-size: 14px;
 }
