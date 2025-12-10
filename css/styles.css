@@ -74,7 +74,7 @@
     --bs-border-radius-2xl: 2rem;
     --bs-border-radius-pill: 50rem;
     --bs-link-color: #ffc4c4;
-    --bs-link-hover-color: #c34e2e;
+    --bs-link-hover-color: #ee6983;
     --bs-code-color: #d63384;
     --bs-highlight-bg: #fff3cd;
 }
@@ -3862,7 +3862,7 @@ textarea.form-control-lg {
     padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
     clear: both;
     font-weight: 400;
-    color: var(--bs-dropdown-link-color);
+    color: #ffc4c4;
     text-align: inherit;
     text-decoration: none;
     white-space: nowrap;
@@ -12437,6 +12437,11 @@ body {
     padding: 2rem 0;
 }
 
+.page-section-services {
+    padding-top: 6rem;
+    padding-bottom: 0rem 0;
+}
+
 .text-white-75 {
     color: rgba(255, 255, 255, 0.75) !important;
 }
@@ -12624,72 +12629,6 @@ header.masthead {
         #portfolio .container-fluid .portfolio-box:hover .portfolio-box-caption, #portfolio .container-sm .portfolio-box:hover .portfolio-box-caption, #portfolio .container-md .portfolio-box:hover .portfolio-box-caption, #portfolio .container-lg .portfolio-box:hover .portfolio-box-caption, #portfolio .container-xl .portfolio-box:hover .portfolio-box-caption, #portfolio .container-xxl .portfolio-box:hover .portfolio-box-caption {
             opacity: 1;
         }
-/*DROPDOWN*/
-#mainNav .nav-item.dropdown .dropdown-toggle::after {
-    display: none !important;
-}
-
-#mainNav .dropdown-menu {
-    background-color: rgba(255, 255, 255, 0.7) !important;
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    overflow: hidden;
-    transition: opacity .15s ease, transform .15s ease;
-}
-
-#mainNav .dropdown-item {
-    font-weight: 600;
-    font-size: 0.90rem;
-    color: #813243 !important;
-    padding: 0.70rem 1.1rem;
-    border-radius: 0 !important;
-    background: none !important;
-    transition: background-color .15s ease, color .15s ease;
-}
-
-    #mainNav .dropdown-menu li:hover .dropdown-item,
-    #mainNav .dropdown-item:hover,
-    #mainNav .dropdown-item:focus {
-        background-color: #813243 !important;
-        color: #fff !important;
-    }
-
-#mainNav .nav-link,
-#mainNav .nav-link:focus,
-#mainNav .nav-link:active {
-    background: none !important;
-    box-shadow: none !important;
-}
-
-@media (min-width: 992px) {
-    #mainNav .nav-item.dropdown:hover .dropdown-menu {
-        display: block;
-        opacity: 1;
-        transform: translateY(0);
-        margin-top: 0 !important;
-    }
-
-    #mainNav .dropdown-menu {
-        opacity: 0;
-        transform: translateY(4px);
-    }
-}
-
-@media (min-width: 992px) {
-    #mainNav.navbar-shrink .dropdown-item {
-        color: #813243 !important;
-    }
-
-        #mainNav.navbar-shrink .dropdown-menu li:hover .dropdown-item,
-        #mainNav.navbar-shrink .dropdown-item:hover {
-            background-color: #813243 !important;
-            color: #fff !important;
-        }
-}
-
     /*İmza Fontu*/
 @font-face {
     font-family: "Cornelia Script";
@@ -12710,6 +12649,8 @@ header.masthead {
     display: flex;
     height: 200px;
     overflow: hidden;
+    padding-right: 0rem;
+    padding-left: 0rem;
 }
 
 /* Fotoğraf alanı */
@@ -12728,18 +12669,19 @@ header.masthead {
 .service-text {
     width: 50%;
     height: 100%;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-left: none;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align:center;
+    background-color: #813243;
 }
 
 /* Başlık linki */
 .service-title-link {
     text-decoration: none;
-    color: #813243;
+    color: #ffc4c4;
+    text-align:center;
 }
 
 /* Başlık */
@@ -12752,4 +12694,48 @@ header.masthead {
 .service-desc {
     margin: 0;
     font-size: 14px;
+    color:#fff;
+}
+
+.catalogs {
+    padding-right: 0 !important;
+    padding-left:0 !important;
+    padding-bottom: 0rem;
+
+}
+
+/*DENEME*/
+
+@media (min-width: 992px){
+    #duyguDurum {
+        border-top-left-radius: 15px;
+    }
+    #motivasyon {
+        border-bottom-left-radius: 15px;
+    }
+    #iliskidinamik {
+        border-top-right-radius: 15px;
+    }
+    #deger {
+        border-bottom-right-radius: 15px;
+    }
+}
+@media (max-width: 992px){
+    #duyguDurum {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    #deger {
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+
+    #degerPhoto {
+
+    }
+
+    #duyguDurumPhoto {
+
+    }
 }
