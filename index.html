@@ -34,16 +34,21 @@
                 <ul class="navbar-nav ms-auto my-2 my-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#about">Hakkımda</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#services" id="analizlerDropdown" role="button"
-                           data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle"
+                           href="#"
+                           id="analizlerDropdown"
+                           role="button"
+                           data-bs-toggle="dropdown"
+                           data-bs-auto-close="false"
+                           aria-expanded="false">
                             Analizler
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="analizlerDropdown">
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="services/BireyselAnaliz.html">Bireysel Analiz</a></li>
-                            <li><a class="dropdown-item" href="services/EgitimAnaliz.html">Sosyal Analiz</a></li>
-                            <li><a class="dropdown-item" href="services/IliskiAnaliz.html">Eğitim Analizi</a></li>
+                            <li><a class="dropdown-item" href="services/SosyalAnaliz.html">Sosyal Analiz</a></li>
+                            <li><a class="dropdown-item" href="services/EgitimAnaliz.html">Eğitim Analizi</a></li>
                             <li><a class="dropdown-item" href="services/MeslekAnaliz.html">Meslek Analizi</a></li>
-                            <li><a class="dropdown-item" href="services/SosyalAnaliz.html">İlişki Analizi</a></li>
+                            <li><a class="dropdown-item" href="services/IliskiAnaliz.html">İlişki Analizi</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#contact">İletişim</a></li>
@@ -173,20 +178,23 @@
         <div class="container px-4 px-lg-5 text-center">
             <h4 class="mb-4 font-weight-bold text-white">Sosyal Medya Hesaplarımdan Beni Takip Edebilirsiniz.</h4>
             <div class="d-flex justify-content-center gap-4 flex-wrap">
-                <a class="d-flex align-items-center gap-2" href="https://instagram.com/" target="_blank">
+                <a class="d-flex align-items-center gap-2" href="https://instagram.com/iamcerennturan" target="_blank">
                     <i class="bi bi-instagram fs-3 text-white"></i>
                 </a>
-                <a class="d-flex align-items-center gap-2" href="https://github.com/" target="_blank">
-                    <i class="bi bi-whatsapp fs-3 text-white"></i>
-                </a>
-                <a class="d-flex align-items-center gap-2" href="https://linkedin.com/" target="_blank">
+                <a class="d-flex align-items-center gap-2" href="https://facebook.com/" target="_blank">
                     <i class="bi bi-facebook fs-3 text-white"></i>
                 </a>
-                <a class="d-flex align-items-center gap-2" href="https://linkedin.com/" target="_blank">
+                <a class="d-flex align-items-center gap-2" href="https://youtube.com/" target="_blank">
                     <i class="bi bi-youtube fs-3 text-white"></i>
                 </a>
-                <a class="d-flex align-items-center gap-2" href="https://linkedin.com/" target="_blank">
-                    <i class="bi bi-twitter fs-3 text-white"></i>
+                <a class="d-flex align-items-center gap-2" href="https://twitter.com/" target="_blank">
+                    <i class="bi bi-twitter-x fs-3 text-white">
+                        <!--X icon-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                            <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                        </svg>
+                        <!--End of X icon-->
+                    </i>
                 </a>
             </div>
         </div>
@@ -212,7 +220,7 @@
                     <i class="bi-envelope fs-2 mb-3 text-primary"></i>
                     <div>Mail</div>
                     <br />
-                    <div>cerenturan@gmail.com</div>
+                    <div>iletisim@cerenturan.com</div>
                 </div>
                 <div class="col-lg-4 text-center mb-5 mb-lg-0">
                     <i class="bi-calendar2-date fs-2 mb-3 text-primary"></i>
@@ -232,7 +240,7 @@
         <div class="container px-4 px-lg-5"><div class="small text-center text-white">Tüm Hakları Saklıdır &copy; 2025 Ceren Turan</div></div>
     </footer>
     <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
     <!-- Core theme JS-->
@@ -242,5 +250,18 @@
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navbar = document.getElementById("navbarResponsive");
+
+            navbar.addEventListener("hide.bs.collapse", function (e) {
+                const openDropdown = navbar.querySelector(".dropdown-menu.show");
+                if (openDropdown) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
 </body>
 </html>

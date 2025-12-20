@@ -35,11 +35,16 @@
                     <li class="nav-item"><a class="nav-link" href="../index.html">Ana Sayfa</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">Hakkımda</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#services" id="analizlerDropdown" role="button"
-                           data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle"
+                           href="#"
+                           id="analizlerDropdown"
+                           role="button"
+                           data-bs-toggle="dropdown"
+                           data-bs-auto-close="false"
+                           aria-expanded="false">
                             Analizler
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="analizlerDropdown">
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="../services/BireyselAnaliz.html">Bireysel Analiz</a></li>
                             <li><a class="dropdown-item" href="../services/SosyalAnaliz.html">Sosyal Analiz</a></li>
                             <li><a class="dropdown-item" href="../services/EgitimAnaliz.html">Eğitim Analizi</a></li>
@@ -165,5 +170,19 @@
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navbar = document.getElementById("navbarResponsive");
+
+            navbar.addEventListener("hide.bs.collapse", function (e) {
+                const openDropdown = navbar.querySelector(".dropdown-menu.show");
+                if (openDropdown) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
