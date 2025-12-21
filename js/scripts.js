@@ -57,3 +57,14 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+//Disable navbar shrink on mobile when clicked inner menu
+document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.getElementById("navbarResponsive");
+
+    navbar.addEventListener("hide.bs.collapse", function (e) {
+        const openDropdown = navbar.querySelector(".dropdown-menu.show");
+        if (openDropdown) {
+            e.preventDefault();
+        }
+    });
+});

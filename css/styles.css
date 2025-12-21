@@ -3603,8 +3603,8 @@ textarea.form-control-lg {
     --bs-dropdown-spacer: 0.125rem;
     --bs-dropdown-font-size: 1rem;
     --bs-dropdown-color: #212529;
-    --bs-dropdown-bg: #fff;
-    --bs-dropdown-border-color: var(--bs-border-color-translucent);
+    --bs-dropdown-bg: #813243;
+    --bs-dropdown-border-color: none;
     --bs-dropdown-border-radius: 0.375rem;
     --bs-dropdown-border-width: 1px;
     --bs-dropdown-inner-border-radius: calc(0.375rem - 1px);
@@ -12629,7 +12629,7 @@ header.masthead {
         #portfolio .container-fluid .portfolio-box:hover .portfolio-box-caption, #portfolio .container-sm .portfolio-box:hover .portfolio-box-caption, #portfolio .container-md .portfolio-box:hover .portfolio-box-caption, #portfolio .container-lg .portfolio-box:hover .portfolio-box-caption, #portfolio .container-xl .portfolio-box:hover .portfolio-box-caption, #portfolio .container-xxl .portfolio-box:hover .portfolio-box-caption {
             opacity: 1;
         }
-    /*İmza Fontu*/
+/* İmza Fontu */
 @font-face {
     font-family: "Cornelia Script";
     src: url("../assets/fonts/cornelia-script-cornelia.ttf") format("truetype");
@@ -12704,7 +12704,7 @@ header.masthead {
 
 }
 
-/*DENEME*/
+/* Fotoğraf Çerçeveleri */
 
 @media (min-width: 992px){
     #duyguDurum {
@@ -12729,13 +12729,5 @@ header.masthead {
     #deger {
         border-bottom-right-radius: 15px;
         border-bottom-left-radius: 15px;
-    }
-
-    #degerPhoto {
-
-    }
-
-    #duyguDurumPhoto {
-
     }
 }
