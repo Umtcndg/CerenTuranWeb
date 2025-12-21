@@ -68,3 +68,33 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+// --- SCROLL ANIMASYONLARI (OBSERVER) ---
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // 1. Scroll Reveal (Aþaðý indikçe beliren elementler)
+    const observerOptions = {
+        threshold: 0.15 // Elementin %15'i görününce çalýþýr
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+
+                // Eðer bu bir imza ise, özel 'yaziliyor' sýnýfýný ekle
+                if (entry.target.classList.contains('imza')) {
+                    entry.target.classList.add('yaziliyor');
+                }
+
+                observer.unobserve(entry.target); // Bir kere çalýþsýn, sürekli yanýp sönmesin
+            }
+        });
+    }, observerOptions);
+
+    // Animasyonlanacak elementleri seçiyoruz
+    // Örneðin: Grid kartlar, baþlýklar, imza
+    const elementsToAnimate = document.querySelectorAll('.reveal-element, .imza');
+    elementsToAnimate.forEach(el => observer.observe(el));
+});

@@ -12731,3 +12731,113 @@ header.masthead {
         border-bottom-left-radius: 15px;
     }
 }
+/* --- EKSTRA TASARIM DOKUNUŞLARI --- */
+
+/* 1. Glassmorphism (Buzlu Cam) Efekti */
+/* Hizmet detay sayfalarındaki o koyu kırmızı kutuları modernleştirir */
+.service-text {
+    /* 1. Eski Asil Renge Dönüş */
+    background-color: #813243 !important; /* Markanın orijinal koyu bordosu */
+    backdrop-filter: none !important; /* Buzlu cam efekti iptal */
+    border: none !important; /* Çerçeveyi kaldırdık */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Hafif bir gölge ile derinlik */
+    /* 2. Kutuları Büyütme ve Yazıları Sığdırma */
+    min-height: 400px; /* Kutunun boyunu uzattık (Yazılar rahat sığsın) */
+    padding: 40px 30px; /* İçeriden boşluk verdik, yazılar kenara yapışmasın */
+    /* İçeriği kutunun ortasına hizalama */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+    .service-text:hover {
+        background-color: #6d2a39 !important; /* Üstüne gelince çok hafif koyulaşsın */
+        transform: translateY(-5px); /* Zıplama efekti kalsın */
+    }
+
+/* Mobilde kutular çok uzun olmasın, otomatiğe dönsün */
+@media (max-width: 768px) {
+    .service-text {
+        min-height: auto; /* Mobilde içeriğe göre uzasın */
+        padding: 30px;
+    }
+}
+
+/* 2. Sırayla Yüklenme (Stagger) İçin Görünmezlik Sınıfı */
+.reveal-element {
+    opacity: 0;
+    transform: translateY(30px); /* Aşağıda başlar */
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); /* Yumuşak geçiş */
+}
+
+    .reveal-element.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+/* 3. İmza Animasyonu (Soldan Sağa Yazılma Efekti) */
+.imza-container {
+    display: inline-block;
+    position: relative;
+    overflow: hidden; /* Taşanı gizle */
+}
+
+.imza {
+    /* Mevcut .imza özelliklerini koru, sadece animasyon ekliyoruz */
+    animation: none; /* JS ile tetikleyeceğiz */
+    opacity: 0; /* Başlangıçta gizli */
+}
+
+    .imza.yaziliyor {
+        opacity: 1;
+        /* Soldan sağa perde açılır gibi açılma efekti (Masking) */
+        clip-path: polygon(0 0, 0 100%, 0 100%, 0 0);
+        animation: imzaAt 2s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+    }
+
+@keyframes imzaAt {
+    to {
+        clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+    }
+}
+
+/* 4. Hero Alanı (Giriş) Yüklenme Animasyonu */
+/* Sayfa ilk açıldığında çalışır */
+header.masthead h1,
+header.masthead p,
+header.masthead .btn {
+    opacity: 0;
+    animation: fadeUp 1s ease-out forwards;
+}
+
+header.masthead h1 {
+    animation-delay: 0.2s;
+}
+
+header.masthead hr {
+    animation-delay: 0.4s;
+    opacity: 0;
+    animation: fadeUp 1s ease-out forwards;
+}
+
+header.masthead p {
+    animation-delay: 0.6s;
+}
+
+header.masthead .btn {
+    animation-delay: 0.8s;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
